@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:overScrollMode="never"
+    android:padding="@dimen/_5sdp"
+    android:scrollbars="none"
+    android:backgroundTint="@color/white"
+    android:background="@color/white"
+    tools:context=".SecondFragment">
+
+    <TextView
+        android:id="@+id/Greeting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/history"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_24sdp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_below="@id/Greeting"
+        android:contentDescription="Tab Layout">
+
+<!--                        <com.google.android.material.tabs.TabItem-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="Bulan Ini"/>-->
+<!--                        -->
+<!--                        <com.google.android.material.tabs.TabItem-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="Semua"/>-->
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <FrameLayout
+        android:id="@+id/frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tab_layout"/>
+
+    <!--        <androidx.viewpager.widget.ViewPager-->
+    <!--            android:id="@+id/view_pager"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            app:layout_constraintTop_toBottomOf="@+id/tabLayout"-->
+    <!--            tools:layout_editor_absoluteX="8dp" />-->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/frame_layout">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="5dp"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="@color/input_background"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="true"
+            android:layout_below="@id/frame_layout">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/image_profile"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_80sdp"
+                    android:src="@drawable/ic_profile"
+                    android:layout_below="@+id/date"
+                    />
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/date"
+                    android:layout_gravity="top|start"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="italic"
+                    />
+
+                <TextView
+                    android:id="@+id/Check_in"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/check_in"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/black"
+                    android:layout_below="@+id/date"
+                    android:layout_toEndOf="@+id/image_profile"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    />
+
+                <TextView
+                    android:id="@+id/Check_out"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/check_out"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/black"
+                    android:layout_below="@+id/Check_in"
+                    android:layout_toEndOf="@+id/image_profile"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    />
+
+                <TextView
+                    android:id="@+id/status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/status"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/black"
+                    android:layout_below="@id/Check_out"
+                    android:layout_toEndOf="@+id/image_profile"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    />
+
+                <TextView
+                    android:id="@+id/date_check_in"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/date"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/secondary_text"
+                    android:layout_below="@+id/date"
+                    android:layout_toEndOf="@+id/image_profile"
+                    android:layout_marginStart="@dimen/_95sdp"
+                    />
+
+                <TextView
+                    android:id="@+id/date_check_out"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/date"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/secondary_text"
+                    android:layout_below="@+id/date_check_in"
+                    android:layout_toEndOf="@+id/image_profile"
+                    android:layout_marginStart="@dimen/_95sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    />
+
+                <TextView
+                    android:id="@+id/clock_check_in"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/time"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/secondary_text"
+                    android:layout_below="@+id/date"
+                    android:layout_toEndOf="@+id/image_profile"
+                    android:layout_marginStart="@dimen/_180sdp"
+                    />
+
+                <TextView
+                    android:id="@+id/clock_check_out"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/time"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/secondary_text"
+                    android:layout_below="@+id/clock_check_in"
+                    android:layout_toEndOf="@+id/image_profile"
+                    android:layout_marginStart="@dimen/_180sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    />
+
+                <TextView
+                    android:id="@+id/status_in"
+                    android:layout_width="@dimen/_115sdp"
+                    android:layout_height="wrap_content"
+                    android:text="status_in"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="#607D8B"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:layout_below="@+id/clock_check_out"
+                    android:layout_toEndOf="@+id/image_profile"
+                    android:layout_marginStart="@dimen/_95sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="#ffd92c"
+                    />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+    </ScrollView>
+
+
+
+</RelativeLayout>

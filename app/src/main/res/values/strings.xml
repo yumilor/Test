@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Test</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="selamat_pagi">Selamat Pagi,</string>
+    <string name="name">Name</string>
+    <string name="lokasi_anda_saat_ini">Lokasi Anda Saat Ini</string>
+    <string name="location">Location</string>
+    <string name="check_in">Check In</string>
+    <string name="alfa">\nAlfa\n\n[]</string>
+    <string name="menu">Menu</string>
+    <string name="setup">Set Up</string>
+    <string name="description_of_menu">Description of Menu</string>
+    <string name="home">Home</string>
+    <string name="history">History</string>
+    <string name="profile">Profile</string>
+    <string name="date">00-00-0000</string>
+    <string name="check_out">Check Out</string>
+    <string name="status">Status</string>
+    <string name="time">00:00</string>
+</resources>
