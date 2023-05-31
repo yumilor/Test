@@ -47,46 +47,46 @@ public class SecondFragment extends Fragment {
 
 
 //
-//        tabLayout.addTab(tabLayout.newTab().setText("Bulan Ini"));
-//        tabLayout.addTab(tabLayout.newTab().setText("Semua"));
-//        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
-//
-//        fragment = new NameFragment();
-//        fragmentManager = getParentFragmentManager();
-//        fragmentTransaction = fragmentManager.beginTransaction();
-//        fragmentTransaction.replace(R.id.frame_layout, fragment);
-//        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-//        fragmentTransaction.commit();
-//
-//        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-//            @Override
-//            public void onTabSelected(TabLayout.Tab tab) {
-//                // Fragment fragment = null;
-//                switch (tab.getPosition()) {
-//                    case 0:
-//                        fragment = new NameFragment();
-//                        break;
-//                    case 1:
-//                        fragment = new NameFragment();
-//                        break;
-//                }
-//                FragmentManager fm = getFragmentManager();
-//                FragmentTransaction ft = fm.beginTransaction();
-//                ft.replace(R.id.frame_layout, fragment);
-//                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-//                ft.commit();
-//            }
-//
-//            @Override
-//            public void onTabUnselected(TabLayout.Tab tab) {
-//
-//            }
-//
-//            @Override
-//            public void onTabReselected(TabLayout.Tab tab) {
-//
-//            }
-//        });
+        tabLayout.addTab(tabLayout.newTab().setText("Bulan Ini"));
+        tabLayout.addTab(tabLayout.newTab().setText("Semua"));
+        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+
+        fragment = new NameFragment();
+        fragmentManager = getParentFragmentManager();
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frame_layout, fragment);
+        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+        fragmentTransaction.commit();
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                // Fragment fragment = null;
+                switch (tab.getPosition()) {
+                    case 0:
+                        fragment = new NameFragment();
+                        break;
+                    case 1:
+                        fragment = new NameFragment();
+                        break;
+                }
+                FragmentManager fm = getFragmentManager();
+                FragmentTransaction ft = fm.beginTransaction();
+                ft.replace(R.id.frame_layout, fragment);
+                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                ft.commit();
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
 
 
 //        viewPager = getView().findViewById(R.id.view_pager);
