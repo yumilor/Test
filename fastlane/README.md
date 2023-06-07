@@ -55,6 +55,14 @@ Assemble Build
 
 Run Unit Tests
 
+### android instrumentation_tests_testlab
+
+```sh
+[bundle exec] fastlane android instrumentation_tests_testlab
+```
+
+Run UI Test in Firebase Test Lab
+
 ----
 
 This README.md is auto-generated and will be re-generated every time [_fastlane_](https://fastlane.tools) is run.

@@ -54,4 +54,26 @@ platform :android do
 	)
   end  
   
+  desc "Run UI Test in Firebase Test Lab"
+  lane :instrumentation_tests_testlab do |options|
+	assemble_build(build_flavor:"dev", build_type:"debug")
+	@app_apk = Actions.lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH]
+  
+	assemble_build(build_flavor:"dev" + "debug", build_type:"AndroidTest")
+	@android_test_apk = Actions.lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH]
+  
+	run_tests_firebase_testlab(
+		project_id:"test-c99f3",
+		app_apk: @app_apk,
+		android_test_apk: @android_test_apk,
+		devices: [
+		{
+          model: "Nexus6P",
+          version: "27"
+		}
+		], 
+	delete_firebase_files: true
+	)
+  end  
+  
 end
