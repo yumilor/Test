@@ -1,10 +1,12 @@
 plugins {
     id 'com.android.application'
+    id 'com.google.gms.google-services'
 }
 
 android {
     namespace 'com.example.test'
     compileSdk 33
+    flavorDimensions "default"
 
     defaultConfig {
         applicationId "com.example.test"
@@ -17,14 +19,31 @@ android {
     }
 
     buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+            debuggable true
+        }
+
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+    productFlavors {
+        dev {
+            applicationId 'com.chanbo.sampleapp.dev'
+            buildConfigField("String", "APP_MODE", "\"Dev\"")
+        }
+        beta {
+            buildConfigField("String", "APP_MODE", "\"Beta\"")
+        }
+        pro {
+            buildConfigField("String", "APP_MODE", "\"Pro\"")
+        }
     }
 }
 
@@ -37,7 +56,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
-    implementation 'com.google.android.material:material:1.2.0'
+    implementation 'com.google.android.material:material:1.9.0'
 
     // Scalable size unit
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
@@ -45,5 +64,8 @@ dependencies {
 
     // Rounded ImageView
     implementation 'com.makeramen:roundedimageview:2.3.0'
+
+    // Firebase
+    implementation platform('com.google.firebase:firebase-bom:32.1.0')
 
 }
