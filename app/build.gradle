@@ -3,10 +3,37 @@ plugins {
     id 'com.google.gms.google-services'
 }
 
+ext.versionMajor = 2
+ext.versionMinor = 5
+ext.versionPatch = 1
+ext.versionClassifier = null
+ext.isSnapShot = false
+ext.minSdkVersion = 24
+
 def keyStorePropertiesFile = rootProject.file("keystore.properties")
 def keyStoreProperties = new Properties()
 keyStoreProperties.load(new FileInputStream(keyStorePropertiesFile))
 
+private Integer generateVersionCode() {
+    return ext.minSdkVersion * 10000000 + ext.versionMajor * 10000 + ext.versionMinor * 100 + ext.versionPatch
+}
+
+private String generateVersionName() {
+    String versionName = "${ext.versionMajor}.${ext.versionMinor}.${ext.versionPatch}"
+
+    if (ext.versionClassifier == null) {
+        if (ext.isSnapShot) {
+            ext.versionClassifier = "SNAPSHOT"
+        }
+    }
+
+    if (ext.versionClassifier != null) {
+        versionName += "-" + ext.versionClassifer
+    }
+
+    return versionName
+
+}
 
 android {
     namespace 'com.example.test'
@@ -14,11 +41,12 @@ android {
     flavorDimensions "default"
 
     defaultConfig {
+        versionName generateVersionName()
+        versionCode generateVersionCode()
         applicationId "com.example.test"
         minSdk 28
         targetSdk 33
-        versionCode 1
-        versionName "1.0"
+
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
