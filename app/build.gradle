@@ -72,7 +72,7 @@ android {
     }
     productFlavors {
         dev {
-            applicationId 'com.example.test'
+            applicationId 'com.appdorms.absensi'
             buildConfigField("String", "APP_MODE", "\"Dev\"")
         }
         beta {
