@@ -1,4 +1,4 @@
-package com.example.test;
+package com.appdorms.absensi;
 
 import android.os.Bundle;
 
@@ -12,7 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-import com.example.test.styling.NameFragment;
+import com.appdorms.absensi.R;
+import com.appdorms.absensi.styling.NameFragment;
 import com.google.android.material.tabs.TabLayout;
 
 public class SecondFragment extends Fragment {
