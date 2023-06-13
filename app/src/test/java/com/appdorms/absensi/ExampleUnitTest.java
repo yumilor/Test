@@ -1,4 +1,4 @@
-package com.example.test;
+package com.appdorms.absensi;
 
 import org.junit.Test;
 

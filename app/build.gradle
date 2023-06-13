@@ -36,14 +36,14 @@ private String generateVersionName() {
 }
 
 android {
-    namespace 'com.example.test'
+    namespace 'com.appdorms.absensi'
     compileSdk 33
     flavorDimensions "default"
 
     defaultConfig {
         versionName generateVersionName()
         versionCode generateVersionCode()
-        applicationId "com.example.test"
+        applicationId "com.appdorms.absensi"
         minSdk 28
         targetSdk 33
 
@@ -61,11 +61,6 @@ android {
     }
 
     buildTypes {
-        debug {
-            applicationIdSuffix ".debug"
-            debuggable true
-        }
-
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
