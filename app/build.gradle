@@ -3,8 +3,8 @@ plugins {
     id 'com.google.gms.google-services'
 }
 
-ext.versionMajor = 2
-ext.versionMinor = 5
+ext.versionMajor = 1
+ext.versionMinor = 1
 ext.versionPatch = 1
 ext.versionClassifier = null
 ext.isSnapShot = false
@@ -15,7 +15,7 @@ def keyStoreProperties = new Properties()
 keyStoreProperties.load(new FileInputStream(keyStorePropertiesFile))
 
 private Integer generateVersionCode() {
-    return ext.minSdkVersion * 10000000 + ext.versionMajor * 10000 + ext.versionMinor * 100 + ext.versionPatch
+    return ext.minSdkVersion * 100000 + ext.versionMajor * 10000 + ext.versionMinor * 100 + ext.versionPatch
 }
 
 private String generateVersionName() {

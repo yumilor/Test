@@ -39,30 +39,6 @@ Submit a new Beta Build to Crashlytics Beta
 
 Deploy a new version to the Google Play
 
-### android assemble_build
-
-```sh
-[bundle exec] fastlane android assemble_build
-```
-
-Assemble Build
-
-### android unit_tests
-
-```sh
-[bundle exec] fastlane android unit_tests
-```
-
-Run Unit Tests
-
-### android instrumentation_tests_testlab
-
-```sh
-[bundle exec] fastlane android instrumentation_tests_testlab
-```
-
-Run UI Test in Firebase Test Lab
-
 ----
 
 This README.md is auto-generated and will be re-generated every time [_fastlane_](https://fastlane.tools) is run.
