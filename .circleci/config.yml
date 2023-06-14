@@ -51,12 +51,12 @@ jobs:
       - run:
           name: Install fastlane first
           command: bundle install
-      - run:
-          name: generate bundle aab
-          command: bundle exec fastlane playstore
-      - run:
-          name: upload aab release
-          command: bundle exec fastlane supply --aab app/pro/release/app-pro-release.aab
+#      - run:
+#          name: Generate bundle aab
+#          command: bundle exec fastlane playstore
+#      - run:
+#          name: Upload aab release
+#          command: bundle exec fastlane supply --aab app/pro/release/app-pro-release.aab
       - run:
           name: Execute fastlane
           command: bundle exec fastlane deploy
