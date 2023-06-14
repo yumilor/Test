@@ -45,9 +45,15 @@ jobs:
           command: ./gradlew lint test
       - store_test_results:
           path: app/build/test-results
+      - store_artifacts: 
+          path: app/build/outputs/apk/debug/
+          destination: artifact-file
       - run:
           name: Install fastlane first
           command: bundle install
+      - run:
+          name: upload aab release
+          command: bundle exec fastlane supply --aab app/pro/release/app-pro-release.aab
       - run:
           name: Execute fastlane
           command: bundle exec fastlane deploy
