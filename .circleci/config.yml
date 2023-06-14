@@ -52,8 +52,14 @@ jobs:
           name: Install fastlane first
           command: bundle install
       - run:
-          name: Generate bundle aab
-          command: bundle exec fastlane playstore
+          name: Install fastlane bundle
+          command: gem install bundle
+      - run:
+          name: Run supply init
+          command: bundle exec fastlane supply init
+#      - run:
+#          name: Generate bundle aab
+#          command: bundle exec fastlane playstore
       - run:
           name: Upload aab release
           command: bundle exec fastlane supply --aab app/pro/release/app-pro-release.aab
