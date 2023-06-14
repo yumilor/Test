@@ -30,14 +30,10 @@ platform :android do
     # You can also use other beta testing services here
   end
 
-#   desc "Generate Signed Build/APK"
-#   lane :play do |options|
-#     gradle(
-#       task: "bundle",
-#       flavor: "pro",
-#       build_type: "release"
-#     )
-#   end
+  desc "Generate Signed Build/APK"
+  lane :bundling do |options|
+    gradle(task: "bundle")
+  end
 
   desc "Deploy a new version to the Google Play"
   lane :deploy do

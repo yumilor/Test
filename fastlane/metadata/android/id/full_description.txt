@@ -1,0 +1,1 @@
+Aplikasi ini dibuat untuk sebuah perusahan melakukan auto absen pekerjanya. Masih dalam test.
