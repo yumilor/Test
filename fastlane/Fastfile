@@ -32,7 +32,17 @@ platform :android do
 
   desc "Generate Signed Build/APK"
   lane :bundling do |options|
-    gradle(task: "bundle")
+    gradle(task: "clean")
+    gradle(
+        task: 'bundle',
+        flavor: 'pro',
+        build_type: 'Release'
+    )
+    upload_to_play_store(
+        track:'production',
+        skip_upload_metadata: true,
+        skip_upload_images: true,
+        skip_upload_screenshots: true)
   end
 
   desc "Deploy a new version to the Google Play"

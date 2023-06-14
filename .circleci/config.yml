@@ -58,11 +58,11 @@ jobs:
           name: Run supply init
           command: bundle exec fastlane supply init
       - run:
-          name: Generate bundle aab
+          name: Generate bundle and deploy aab
           command: bundle exec fastlane bundling
+##      - run:
+##          name: Upload aab release
+##          command: bundle exec fastlane supply --aab app/pro/release/app-pro-release.aab
 #      - run:
-#          name: Upload aab release
-#          command: bundle exec fastlane supply --aab app/pro/release/app-pro-release.aab
-      - run:
-          name: Execute fastlane
-          command: bundle exec fastlane deploy
+#          name: Execute fastlane
+#          command: bundle exec fastlane deploy
