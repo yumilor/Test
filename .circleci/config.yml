@@ -60,9 +60,9 @@ jobs:
       - run:
           name: Generate bundle aab
           command: bundle exec fastlane bundling
-      - run:
-          name: Upload aab release
-          command: bundle exec fastlane supply --aab /project/app/build/outputs/bundle/proRelease/app-pro-release.aab
+#      - run:
+#          name: Upload aab release
+#          command: bundle exec fastlane supply --aab /project/app/build/outputs/bundle/proRelease/app-pro-release.aab
       - run:
           name: Execute fastlane
           command: bundle exec fastlane deploy
